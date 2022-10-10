@@ -1,0 +1,37 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "test-app-two"
+  description: "test-app-two"
+  annotations:
+    github.com/project-slug: learnings-itskdaniel/test-app-two
+    backstage.io/techdocs-ref: dir:.
+    argocd/app-name: dev-test-app-two
+    backstage.io/kubernetes-id: "test-app-two"
+    sonarqube.org/project-key: "test-app-two"
+    grafana/tag-selector: "kubernetes"
+    prometheus.io/rule: container_cpu_usage_seconds_total{namespace="test-app-two"}
+    prometheus.io/alert: all
+  links:
+    - url: https://test-app-two.diegoluisi.eti.br
+      title: Website
+      icon: Website
+    - url: https://grafana.diegoluisi.eti.br/
+      title: Dashboard
+      icon: dashboard      
+    - url: https://alerts.diegoluisi.eti.br/
+      title: Alerts
+      icon: alert 
+    - url: https://argocd.diegoluisi.eti.br/applications/dev-test-app-two?resource=
+      title: ArgoCD
+      icon: cloud
+  tags:
+    - golang
+    - "examples"
+    - "service"
+    - "experimental"
+spec:
+  system: "examples"
+  type:  "service"
+  lifecycle: "experimental"
+  owner: "guests"
